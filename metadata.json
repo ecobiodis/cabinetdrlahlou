@@ -1,0 +1,7 @@
+{
+  "name": "Cabinet Dr Lahlou",
+  "description": "Un site web moderne, professionnel et rassurant pour le Cabinet Dr Lahlou, axé sur l'expérience patient et la confiance.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
