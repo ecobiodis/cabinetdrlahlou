@@ -75,6 +75,7 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
+            className="bg-white/40 backdrop-blur-md p-8 md:p-16 rounded-[40px] border border-white/40 shadow-2xl"
           >
             <h1 className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-serif text-blue-950 leading-[1.1] mb-6 md:mb-10 tracking-tight">
               Bienvenue dans un espace dédié à votre sourire
@@ -286,7 +287,7 @@ export default function App() {
             viewport={{ once: true }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=1000" 
+              src="https://images.unsplash.com/photo-1613927190316-9748b67b65b2?auto=format&fit=crop&q=80&w=1000" 
               alt="Dr. Lahlou" 
               className="rounded-2xl md:rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000"
               referrerPolicy="no-referrer"
@@ -336,7 +337,7 @@ export default function App() {
             <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=500" alt="Salle d'attente" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
           </div>
           <div className="sm:col-span-2 rounded-2xl md:rounded-3xl overflow-hidden group h-48 md:h-64">
-            <img src="https://images.unsplash.com/photo-1468493858157-0da44aaf1d13?auto=format&fit=crop&q=80&w=1000" alt="Hygiène" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1000" alt="Hygiène" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
           </div>
         </div>
       </section>
