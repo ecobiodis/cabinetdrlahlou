@@ -17,6 +17,39 @@
     <meta property="twitter:title" content="Cabinet Dr Lahlou | Sourire & Confiance à Casablanca" />
     <meta property="twitter:description" content="Un site web moderne, professionnel et rassurant pour le Cabinet Dr Lahlou, axé sur l'expérience patient et la confiance." />
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200" />
+    <script>
+      // Fix for "Cannot set property fetch of #<Window> which has only a getter"
+      // and other Node.js environment shims.
+      (function() {
+        var g = typeof globalThis !== 'undefined' ? globalThis : window;
+        
+        // Polyfill global if missing
+        if (typeof g.global === 'undefined') {
+          g.global = g;
+        }
+
+        // Fix fetch getter/setter issue
+        try {
+          var descriptor = Object.getOwnPropertyDescriptor(g, 'fetch');
+          if (descriptor && !descriptor.writable && descriptor.configurable) {
+            var _fetch = g.fetch;
+            Object.defineProperty(g, 'fetch', {
+              configurable: true,
+              enumerable: true,
+              get: function() { return _fetch; },
+              set: function(v) { _fetch = v; }
+            });
+          }
+        } catch (e) {
+          console.warn("Fetch polyfill failed:", e);
+        }
+
+        // Ensure FormData has keys to prevent some polyfills from running
+        if (typeof g.FormData !== 'undefined' && !g.FormData.prototype.keys) {
+          g.FormData.prototype.keys = function() { return []; };
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

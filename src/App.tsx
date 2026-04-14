@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { MessageCircle, Phone, MapPin, Clock, CheckCircle2, ArrowRight, Star, User, ShieldCheck, HeartPulse, ChevronRight, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { IMAGES } from "./constants/images";
 
 const WHATSAPP_NUMBER = "+212662825890";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace("+", "")}`;
@@ -62,7 +63,7 @@ export default function App() {
       <section className="relative h-[90vh] md:h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000" 
+            src={IMAGES.hero} 
             alt="Cabinet dentaire moderne et lumineux" 
             className="w-full h-full object-cover brightness-95"
             referrerPolicy="no-referrer"
@@ -141,7 +142,7 @@ export default function App() {
             className="relative"
           >
             <img 
-              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1000" 
+              src={IMAGES.philosophie} 
               alt="Dentiste à l'écoute" 
               className="rounded-3xl shadow-2xl"
               referrerPolicy="no-referrer"
@@ -201,10 +202,10 @@ export default function App() {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {[
-            { title: "Soins Dentaires", desc: "Prévention, caries et détartrage pour une santé durable.", img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=500" },
-            { title: "Blanchiment", desc: "Retrouvez l'éclat de votre sourire en une séance douce.", img: "https://images.unsplash.com/photo-1593054991678-3a15c8976aa0?auto=format&fit=crop&q=80&w=500" },
-            { title: "Orthodontie", desc: "Alignement parfait pour enfants et adultes.", img: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=500" },
-            { title: "Implants", desc: "Solutions durables et esthétiques pour remplacer vos dents.", img: "https://images.unsplash.com/photo-1468493858157-0da44aaf1d13?auto=format&fit=crop&q=80&w=500" }
+            { title: "Soins Dentaires", desc: "Prévention, caries et détartrage pour une santé durable.", img: IMAGES.soins.dentaires },
+            { title: "Blanchiment", desc: "Retrouvez l'éclat de votre sourire en une séance douce.", img: IMAGES.soins.blanchiment },
+            { title: "Orthodontie", desc: "Alignement parfait pour enfants et adultes.", img: IMAGES.soins.orthodontie },
+            { title: "Implants", desc: "Solutions durables et esthétiques pour remplacer vos dents.", img: IMAGES.soins.implants }
           ].map((service, idx) => (
             <motion.div 
               key={idx}
@@ -235,21 +236,21 @@ export default function App() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-4">
               <div className="space-y-4 md:space-y-4">
                 <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=500" alt="Avant" className="w-full h-48 md:h-64 object-cover" referrerPolicy="no-referrer" />
+                  <img src={IMAGES.avantApres.cas1.avant} alt="Avant" className="w-full h-48 md:h-64 object-cover" referrerPolicy="no-referrer" />
                   <div className="bg-slate-100 py-2 text-center text-[10px] md:text-xs font-medium uppercase tracking-widest text-slate-500">Avant</div>
                 </div>
                 <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=500" alt="Après" className="w-full h-48 md:h-64 object-cover" referrerPolicy="no-referrer" />
+                  <img src={IMAGES.avantApres.cas1.apres} alt="Après" className="w-full h-48 md:h-64 object-cover" referrerPolicy="no-referrer" />
                   <div className="bg-blue-600 py-2 text-center text-[10px] md:text-xs font-medium uppercase tracking-widest text-white">Après</div>
                 </div>
               </div>
               <div className="sm:pt-12 space-y-4 md:space-y-4">
                 <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1571772996211-2f02c97da19d?auto=format&fit=crop&q=80&w=500" alt="Avant" className="w-full h-48 md:h-64 object-cover" referrerPolicy="no-referrer" />
+                  <img src={IMAGES.avantApres.cas2.avant} alt="Avant" className="w-full h-48 md:h-64 object-cover" referrerPolicy="no-referrer" />
                   <div className="bg-slate-100 py-2 text-center text-[10px] md:text-xs font-medium uppercase tracking-widest text-slate-500">Avant</div>
                 </div>
                 <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-lg">
-                  <img src="https://images.unsplash.com/photo-1597764690523-15bea4c581c9?auto=format&fit=crop&q=80&w=500" alt="Après" className="w-full h-48 md:h-64 object-cover" referrerPolicy="no-referrer" />
+                  <img src={IMAGES.avantApres.cas2.apres} alt="Après" className="w-full h-48 md:h-64 object-cover" referrerPolicy="no-referrer" />
                   <div className="bg-blue-600 py-2 text-center text-[10px] md:text-xs font-medium uppercase tracking-widest text-white">Après</div>
                 </div>
               </div>
@@ -287,7 +288,7 @@ export default function App() {
             viewport={{ once: true }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1613927190316-9748b67b65b2?auto=format&fit=crop&q=80&w=1000" 
+              src={IMAGES.dentiste} 
               alt="Dr. Lahlou" 
               className="rounded-2xl md:rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000"
               referrerPolicy="no-referrer"
@@ -328,16 +329,16 @@ export default function App() {
         
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           <div className="sm:col-span-2 sm:row-span-2 rounded-2xl md:rounded-3xl overflow-hidden group h-64 sm:h-auto">
-            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1000" alt="Cabinet" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src={IMAGES.cabinet.principal} alt="Cabinet" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
           </div>
           <div className="rounded-2xl md:rounded-3xl overflow-hidden group h-48 md:h-auto">
-            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=500" alt="Équipement" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src={IMAGES.cabinet.equipement} alt="Équipement" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
           </div>
           <div className="rounded-2xl md:rounded-3xl overflow-hidden group h-48 md:h-auto">
-            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=500" alt="Salle d'attente" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src={IMAGES.cabinet.salleAttente} alt="Salle d'attente" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
           </div>
           <div className="sm:col-span-2 rounded-2xl md:rounded-3xl overflow-hidden group h-48 md:h-64">
-            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&q=80&w=1000" alt="Hygiène" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+            <img src={IMAGES.cabinet.hygiene} alt="Hygiène" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
           </div>
         </div>
       </section>
